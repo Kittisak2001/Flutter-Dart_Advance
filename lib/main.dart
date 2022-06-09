@@ -4,26 +4,27 @@ void main() {
   runApp(const MyApp());
 }
 
-class Cat extends Object {
-  final String name;
-  Cat(this.name);
+class PairOfString{
+  final String value1;
+  final String value2;
+  PairOfString(this.value1, this.value2);
+}
 
-  @override
-  bool operator ==(covariant Cat other) => other.name == name;
-  
-  @override
-  int get hashCode => name.hashCode;
-  
+class PairOfIntegers{
+  final int value1;
+  final int value2;
+  PairOfIntegers(this.value1, this.value2);
+}
+
+class Pair<A, B>{
+  final A value1;
+  final B value2;
+  Pair(this.value1, this.value2);
 }
 
 void test() {
-  final cat1 = Cat('Foo');
-  final cat2 = Cat('Foo');
-  if (cat1 == cat2) {
-    print('They are equal');
-  } else {
-    print('They are not equal');
-  }
+  final names = Pair('foo', 20);
+  print(names);
 }
 
 class MyApp extends StatelessWidget {
